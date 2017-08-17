@@ -6,6 +6,7 @@
 	if(isset($_GET['tribeInstall'])){
 		include("lib/install.php");
 		$inst = new tribe_install();
+		$inst->purge_data();
 		$inst->install();
 	}else{
 		include("lib/api_handler.php");

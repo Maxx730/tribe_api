@@ -69,14 +69,46 @@
 
 	 	}
 
+	 	//Purges data from all the tables in the database.
+	 	public function purge_data(){
+	 		$this->purge_table("user");
+	 		$this->purge_table("tribe");
+	 		$this->purge_table("tribe_user");
+	 	}
+
 	 	//Data used for testing our database.
 	 	public function create_mock_data(){
 	 		$query = "INSERT INTO user(username,password) VALUES('maxx730','remote12')";
 
 	 		if(mysqli_query($this->connection,$query)){
-	 			echo "SUCCESS: Succesfully inserted mock users into database.";
+	 			echo "SUCCESS: Succesfully inserted mock users into database.\n";
+
+	 			$query = "INSERT INTO tribe(title,description,creator) VALUES('My First Tribe','Example data for testing purposes.',0)";
+
+	 			if(mysqli_query($this->connection,$query)){
+	 				echo "SUCCESS: Successfully created Test Tribe.\n";
+
+	 				$query = "INSERT INTO tribe_user() VALUES()";
+	 			}else{
+	 				echo "ERROR: Unable to create test Tribe.\n";
+	 			}
 	 		}else{	
-	 			echo "ERROR: Problem inserting mock users into database.";
+	 			echo "ERROR: Problem inserting mock users into database.\n";
+	 		}
+	 	}
+
+	 	//Drops all the records from a given table in the tribe database.
+	 	public function purge_table($table){
+	 		if(mysqli_select_db($this->connection,$this->database)){
+		 		$query = "TRUNCATE TABLE ".$table;
+
+		 		if(mysqli_query($this->connection,$query)){
+		 			echo "SUCCESS: Succesfully purged all data from ".$table.".\n";
+		 		}else{
+		 			echo "ERROR: Problem purging data from database.\n";
+		 		}
+	 		}else{
+	 			echo "ERROR: Could not select the Tribe database to purge data.\n";
 	 		}
 	 	}
 	}
