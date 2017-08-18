@@ -88,7 +88,13 @@
 	 			if(mysqli_query($this->connection,$query)){
 	 				echo "SUCCESS: Successfully created Test Tribe.\n";
 
-	 				$query = "INSERT INTO tribe_user() VALUES()";
+	 				$query = "INSERT INTO tribe_user(tid,uid) VALUES(1,1)";
+
+	 				if(mysqli_query($this->connection,$query)){
+	 					echo "SUCCESS: Installed tribe user data.\n";
+	 				}else{
+	 					echo "ERROR: Problem inserting record into tribe_user.\n";
+	 				}
 	 			}else{
 	 				echo "ERROR: Unable to create test Tribe.\n";
 	 			}

@@ -12,18 +12,18 @@
 
 		//Takes in user data and compares it against the data
 		//base to make sure the user is allowed to access.
-		public function authenticate($user){
+		public function authenticate($user,$password){
 			$parsed = json_decode($user,true);
-			$query = "SELECT * FROM user WHERE username='".$parsed['username']."' AND password='".$parsed['password']."'";
+			$query = "SELECT * FROM user WHERE username='".$user."' AND password='".$password."'";
 			
 			$result = mysqli_query($this->database->connection,$query);
 
 			if($result->num_rows > 0){
 				while($row = $result->fetch_assoc()){
-					$this->user_id = $row["user_id"];
+					$this->user_id = $row["uid"];
 					$this->username = $row["username"];
 
-					echo "\nUser ID: ".$this->user_id;
+					echo "\nUser ID: ".$this->user_id."\n";
 				}
 				
 				return true;

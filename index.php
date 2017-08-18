@@ -17,30 +17,24 @@
 		$authenticate = new authentication_handler($db);
 
 		if(isset($_GET['tribe_data'])){
-			if(isset($_GET['newAccount'])){
-				//Create accounts go here.
-			}else{
-				if(isset($_GET["tribe_data"])){
-					//Any time any client on any platform interacts with our database
-					//they are going to send a JSON object containing the information
-					//of where they are requesting from, what they want and their 
-					//credentials.
-					echo $_GET['tribe_data'];
-				}
+			if(isset($_GET["tribe_data"])){
+				//Any time any client on any platform interacts with our database
+				//they are going to send a JSON object containing the information
+				//of where they are requesting from, what they want and their 
+				//credentials.
+				echo $_GET['tribe_data']."\n";
 
-				//If we are not trying to create a new account we want to check 
-				//if the user is trying to authenticate.
-				if($authenticate->authenticate($_GET['auth'])){
-					//Makesure there is a request variable set before we send the request to the api handler.
-					if(isset($_GET['action']) && isset($_GET['data'])){
-						//initialize our api class to start communicating with the database.
-						$api = new api_handler($_GET['action'],$_GET['data'],$authenticate,$db);
-					}else{
-						//Return and error if the variable is missing.
-						echo "\nERROR: There was an error in the request that you sent.";
-					}
+				$data = json_decode($_GET['tribe_data'],true);
+
+				if($authenticate->authenticate($data['credentials']['username'],$data['credentials']['password'])){
+					//Since the credentials have passed we then
+					//want to start up the api handler to get or
+					//recieve data.
+					$retriever = new api_handler($authenticate,$data,$db);
+
+			
 				}else{
-					echo "Authentication failed.";
+					echo "ERROR: Not a valid username or password.\n";
 				}
 			}
 		}
