@@ -1,0 +1,48 @@
+@font-face {font-family: Passero;src: url(../fonts/PasseroOne-Regular.ttf);}
+@font-face {font-family: Expressway;src: url(../fonts/Zerocalcare.ttf);}
+@font-face {font-family: Kalos;src: url(../fonts/Ubuntu-R.ttf);}
+
+#tribe-info-hold{height:20px;background:#000;}
+#search-tribes-people{border-top:none;border-right:none;border-left:none;border-radius:0px;}
+#user-prof-btn{border-radius:5px;;position:absolute;width:45px;height:45px;background:url(../images/user_male4-20.png);background-size:100% auto;background-position:0% 5px;background-repeat:no-repeat;background-color:#ddd;;right:12px;top:10px;border:solid 3px #FFF;}
+#search-tribes-people{background:url(../images/search-24.png) no-repeat;padding-left:35px;background-size:16px auto;background-position:10px 23px;background-color:#fff;height:67px;border:none;}
+#slider_right #context-tabs-left{background:#ddd;position:absolute;width:100%;bottom:0px;}
+#slider_right #context-tabs-left .tab{float:left;width:33.3%;border-top:solid 2px #ddd;background:#ddd;text-align:center;padding-bottom:10px;padding-top:10px;}
+#username-profile-label{position:absolute;right:70px;top:15px;}
+#firepit-message-animation{position:absolute;width:100%;height:3px;background:#000;bottom:46px;z-index:999;}
+.single-message.other-user .single-mes-background{position:relative;float:right;background:#ddd;color:#000;border-bottom-left-radius:50px;border-bottom-right-radius:10px;margin-right:20px;}
+.single-message.other-user .message-sender{left:auto;right:5px!important;}
+.single-message.other-user .message-sender-img{left:auto;right:-10px;}
+
+/* LOGIN/REGISTER PAGE STYLING */
+html.login-page,html.login-page body{background:#282828;min-height:1000px;position:relative;padding:0px;margin:0;min-width:960px;}
+#login-container,#register-container{width:600px;height:900px;background-size:100% auto;background-repeat:no-repeat;margin:0 auto;margin-top:200px;}
+#login-container h1,#register-container h1{font-family:'Kalos';font-size:2em;color:#FFF;text-align:center;}
+#login-container h1 img{width:35px;margin-bottom:-5px;}
+
+.center-content{width:auto;text-align:center;}
+.push-down{margin-top:12px;}
+
+#register-container{margin-top:0px;}
+
+
+.sign-up-contain{float:left;color:#FFF;font-family:Kalos;font-size:12px;text-align:center;width:100%;text-shadow: 0px 1px #0A0A0A;}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #0A0A0A;
+  text-shadow: 0px 1px #333333;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #000000;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #000000;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #000000;
+}
+
+#tribal_bottom{width:100%;height:136px;position:absolute;background:url(../images/patterns/tribal_1.png);bottom:0px;opacity:.2;}
+#tribal_top{width:100%;height:136px;position:absolute;background:url(../images/patterns/tribal_2.png);top:40px;opacity:.2;}
+
+#tribe_header_panel{width:100%;height:40px;/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd000+0,d17d00+100 */background: #ffd000; /* Old browsers */background: -moz-linear-gradient(top, #ffd000 0%, #d17d00 100%); /* FF3.6-15 */background: -webkit-linear-gradient(top, #ffd000 0%,#d17d00 100%); /* Chrome10-25,Safari5.1-6 */background: linear-gradient(to bottom, #ffd000 0%,#d17d00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd000', endColorstr='#d17d00',GradientType=0 ); /* IE6-9 */border-bottom:solid 1px #ffa627;}

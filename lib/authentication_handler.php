@@ -22,8 +22,6 @@
 				while($row = $result->fetch_assoc()){
 					$this->user_id = $row["uid"];
 					$this->username = $row["username"];
-
-					echo "\nUser ID: ".$this->user_id."\n";
 				}
 				
 				return true;
