@@ -38,28 +38,23 @@
 				}
 			}
 		}
-	}elseif(isset($_POST['sign-in-username']) && isset($_POST['sign-in-password'])){
-		echo "found something";
 	}else{
+		//Always require the head of our Tribe interface.
+		require_once('modules/head.php');
+		require_once('modules/tribe_panel.php');
+		include("lib/api_handler.php");
+		include("lib/database_handler.php");
+		include("lib/authentication_handler.php");
+
+		$db = new database_handler();
+		$authenticate = new authentication_handler($db);
+
+		if(isset($_POST['sign-in-username']) && isset($_POST['sign-in-password'])){
+			if($authenticate->authenticate($_POST['sign-in-username'],$_POST['sign-in-password'])){
+				require_once('modules/dashboard.php');
+			}
+		}else{
 		?>
-			<html class = "login-page">
-				<head>
-					<title>
-						Firepit
-					</title>
-					<link rel = "stylesheet" type = "text/css" href = "assets/stylesheets/tribe_ui/buttons.css"/>
-					<link rel = "stylesheet" type = "text/css" href = "assets/stylesheets/tribe_ui/input.css"/>
-					<link rel = "stylesheet" type = "text/css" href = "assets/stylesheets/style.css"/>
-				</head>
-				<body>
-					<div id = "tribe_header_panel">
-						<div id = "tribe-panel-logo">
-
-						</div>
-						<div id = "">
-
-						</div>
-					</div>
 					<div id = "tribal_top">
 
 					</div>
@@ -96,13 +91,9 @@
 							</button>
 						</div>
 					</div>
-
-					<div id = "tribal_bottom">
-
-					</div>
-				</body>
-			</html>
 		<?php
+		}
+			require_once('modules/foot.php');
 	}
 ?>
 
