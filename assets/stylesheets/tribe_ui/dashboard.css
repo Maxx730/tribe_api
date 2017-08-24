@@ -1,10 +1,16 @@
 #tribe-dashboard{float:left;width:93%;min-height:600px;background:#f3f1eb;}
 #tribe-dashboard h1{margin:0;}
-#tribe-panel-contain,#tribe-panel-contain ul{padding:0px;margin:0;list-style:none;float:left;width:60px;background:#1d1d1d;height:100%;position:fixed;top:0px;}
-#tribe-panel-contain li.tribe-tab{position:relative;float:left;padding:8px;border:solid 1px #2a2a2a;width:59px;height:60px;padding:0px;border-left:none;background:#232323;text-align:center;cursor:pointer;font-family:Icons;}
-#tribe-panel-contain li.tribe-tab:not(:first-child).selected{background:#161616;border-right:solid 1px #232323;border-top:solid 1px #161616;}
+#tribe-panel-contain,#tribe-panel-contain ul{border-right:solid 1px #2a2a2a;padding:0px;margin:0;list-style:none;float:left;width:59px;background:#1d1d1d;height:100%;position:fixed;top:0px;}
+#tribe-panel-contain li.tribe-tab,div.tribe-tab{position:relative;float:left;padding:8px;border:solid 1px #2a2a2a;width:59px;height:60px;padding:0px;border-left:none;background:#232323;text-align:center;cursor:pointer;font-family:Icons;}
+#tribe-panel-contain li.tribe-tab:not(:first-child).selected i{opacity:1;text-shadow: 1px 1px #000000;}
+/* #tribe-panel-contain li.tribe-tab:not(:first-child).before-selected{border-bottom:solid 1px #2a2a2a;}
+#tribe-panel-contain li.tribe-tab:not(:first-child).after-selected{border-top:solid 1px #2a2a2a;margin-top:0px;} */
 #tribe-panel-contain li.tribe-tab:first-child{border-top:none;background:#de8800;border-color:#ff9c01;}
 #tribe-panel-contain li.tribe-tab:not(:first-child){margin-top:1px;border-bottom:none;}
 #tribe-panel-submenu{position:fixed;left:60px;background-image:url(../../images/patterns/submenu-shade.png);background-color:#111111;height:100%;width:250px;top:0px;background-repeat:repeat-y;left:60px;}
 
-.icon-menu-left i{color:#FFFFFF;font-size:16px;top:22px;position:absolute;left:20px;opacity:.3;}
+.icon-menu-left i,#logout-tab i{color:#FFFFFF;font-size:16px;top:22px;position:absolute;left:20px;opacity:.1;}
+#tribe-panel-contain .tribe-tab:not(:first-child):hover i{opacity:1;}
+.sub-menu-content{position:fixed;width:250px;height:100%;}
+.sub-menu-content h1{border-bottom:solid 1px #373737;margin:0 auto;padding:0;padding-top:24px;padding-bottom:15px;font-weight:normal;color:#373737;font-size:18px;width:90%;}
+#logout-tab{position:absolute;width:59px;height:59px;bottom:0px;}

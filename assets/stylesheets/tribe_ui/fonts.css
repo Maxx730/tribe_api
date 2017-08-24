@@ -1,6 +1,4 @@
-@font-face {font-family: Passero;src: url(../fonts/PasseroOne-Regular.ttf);}
-@font-face {font-family: Expressway;src: url(../fonts/Zerocalcare.ttf);}
-@font-face {font-family: Kalos;src: url(../fonts/Ubuntu-R.ttf);}
+
 @font-face {
 	font-family: 'Batch';
 	src:url('../fonts/batch-icons-webfont.eot?-fvbane');
@@ -22,5 +20,8 @@
 .batch:before {
     content:attr(data-icon);
 }
-
-.ubuntu-font{font-family:Kalos;color:#FFF;}
+@font-face {
+    font-family: Ubuntu;
+    src: url(../fonts/Ubuntu-R.ttf);
+}
+.ubuntu-font{font-family:'Ubuntu';}

@@ -6,16 +6,29 @@
 		<li class = 'tribe-tab icon-menu-left selected'>
 			<i class = 'icon-uniE00A'></i>
 		</li>
-		<li class = 'tribe-tab icon-menu-left'>
+		<li class = 'tribe-tab icon-menu-left after-selected'>
 			<i class = 'icon-uniE03A'></i>
 		</li>
 		<li class = 'tribe-tab icon-menu-left'>
 			<i class = 'icon-uniE035'></i>
 		</li>
 	</ul>
+	<div id = 'logout-tab' class = 'tribe-tab'>
+		<a href = "/tribe/?logout=true">
+			<i class = 'icon-uniE003'></i>
+		</a>
+	</div>
 </div>
 <div id = 'tribe-panel-submenu'>
-
+	<div class = "sub-menu-content">
+		<h1 class = 'ubuntu-font'>Submenu Title</h1>
+	</div>
+	<div class = "sub-menu-content">
+		<h1 class = 'ubuntu-font'>Submenu Title</h1>
+	</div>
+	<div class = "sub-menu-content">
+		<h1 class = 'ubuntu-font'>Submenu Title</h1>
+	</div>
 </div>
 <div id = 'tribe-dashboard'>
 	<h1 class = 'ubuntu-font'>Firepit</h1>

@@ -12,5 +12,7 @@
 
 		<!-- LOAD ALL OF THE JS FOR THE SYSTEM -->
 		<script type = "text/javascript" src = "assets/js/common/jquery-3.2.1.min.js"></script>
+		<script type = "text/javascript" src = "assets/js/dashboard/lib/dashboard_menu.js"></script>
+		<script type = "text/javascript" src = "assets/js/dashboard/init.js"></script>
 	</head>
 	<body>
