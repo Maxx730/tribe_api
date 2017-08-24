@@ -49,7 +49,9 @@
 		$db = new database_handler();
 		$authenticate = new authentication_handler($db);
 
-		if(isset($_POST['sign-in-username']) && isset($_POST['sign-in-password'])){
+		session_start();
+
+		if((isset($_POST['sign-in-username']) && isset($_POST['sign-in-password'])) || isset($_SESSION['tribe_user'])){
 			if($authenticate->authenticate($_POST['sign-in-username'],$_POST['sign-in-password'])){
 				require_once('modules/dashboard.php');
 			}
@@ -94,6 +96,8 @@
 		<?php
 		}
 			require_once('modules/foot.php');
+
+			session_destroy();
 	}
 ?>
 

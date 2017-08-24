@@ -14,3 +14,5 @@
 .sub-menu-content{position:fixed;width:250px;height:100%;}
 .sub-menu-content h1{border-bottom:solid 1px #373737;margin:0 auto;padding:0;padding-top:24px;padding-bottom:15px;font-weight:normal;color:#373737;font-size:18px;width:90%;}
 #logout-tab{position:absolute;width:59px;height:59px;bottom:0px;}
+
+.hide{display:none;}
