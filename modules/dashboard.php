@@ -4,20 +4,31 @@
 			
 		</li>
 		<li class = 'tribe-tab icon-menu-left selected' data-content-tabs = "tribe-panel-submenu" data-content-submenu = "tribe-dashboard-menu">
-			<i class = 'icon-uniE00A'></i>
+			<i class = 'icon-uniE004'></i>
 		</li>
 		<li class = 'tribe-tab icon-menu-left after-selected' data-content-tabs = "tribe-panel-submenu" data-content-submenu = "firepit-chat">
 			<i class = 'icon-uniE03A'></i>
 		</li>
-		<li class = 'tribe-tab icon-menu-left'>
+		<li class = 'tribe-tab icon-menu-left after-selected' data-content-tabs = "tribe-panel-submenu" data-content-submenu = "firepit-chat">
+			<i class = 'icon-uniE037'></i>
+		</li>
+		<li class = 'tribe-tab icon-menu-left' data-content-tabs = "tribe-panel-submenu" data-content-submenu = "tribe-dashboard-settings">
 			<i class = 'icon-uniE035'></i>
 		</li>
 	</ul>
+	<div id = 'profile-tab' class = 'tribe-tab'>
+		<div id = "profile-picture-small">
+			<img src = ""/>
+		</div>
+	</div>
 	<div id = 'logout-tab' class = 'tribe-tab'>
 		<a href = "/tribe/?logout=true">
 			<i class = 'icon-uniE003'></i>
 		</a>
 	</div>
+</div>
+<div id = "profile-info-popup">
+			
 </div>
 <div id = 'tribe-panel-submenu'>
 	<div id = "tribe-dashboard-menu" class = "sub-menu-content">
@@ -26,8 +37,8 @@
 	<div id = "firepit-chat" class = "sub-menu-content hide">
 		<h1 class = 'ubuntu-font'>Firepit</h1>
 	</div>
-	<div class = "sub-menu-content hide">
-		<h1 class = 'ubuntu-font'>Submenu Title</h1>
+	<div id = "tribe-dashboard-settings" class = "sub-menu-content hide">
+		<h1 class = 'ubuntu-font'>Settings</h1>
 	</div>
 </div>
 <div id = 'tribe-dashboard'>
