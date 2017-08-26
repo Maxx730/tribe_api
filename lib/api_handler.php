@@ -26,6 +26,9 @@
 				case "auth_token":
 					$this->return_auth_token();
 				break;
+				case "log_session":
+
+				break;
 			}
 		}
 
@@ -97,6 +100,19 @@
 				return $data;
 			}else{
 				echo "ERROR: There is no tribe data for the given id.\n";
+			}
+		}
+
+		//Returns the user info as well as all the tribes the user is a part of etc.
+		private function return_user_info($uid){
+			$query = "SELECT * FROM user WHERE uid=".$uid;
+
+			$result = mysqli_query($this->db->connection,$query);
+
+			if($result->num_rows > 0){
+				
+			}else{
+				echo "ERROR: User with given ID does not exist.";
 			}
 		}
 	}

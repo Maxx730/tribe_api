@@ -52,7 +52,9 @@
 		session_start();
 
 		if((isset($_POST['sign-in-username']) && isset($_POST['sign-in-password'])) || isset($_SESSION['tribe_user'])){
-			if($authenticate->authenticate($_POST['sign-in-username'],$_POST['sign-in-password'])){
+			if($authenticate->authenticate($_POST['sign-in-username'],$_POST['sign-in-password']) || isset($_SESSION['tribe_user'])){
+				$api = new api_handler($authenticate,'{"action":"get","object":"log_session"}',$db);
+
 				require_once('modules/dashboard.php');
 			}
 		}else{
