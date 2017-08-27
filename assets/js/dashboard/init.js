@@ -2,5 +2,5 @@
 //dashboard interface to function.
 window.onload = function(){
 	window.dash = new dashboard_menu();
-	winder.binder = new databinder();
+	window.binder = new databinder();
 }

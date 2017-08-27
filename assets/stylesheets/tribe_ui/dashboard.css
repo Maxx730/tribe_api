@@ -22,3 +22,5 @@
 box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);}
 
 #profile-info-popup{width:250px;height:123px;background:#232323;position:fixed;left:60px;bottom:0px;z-index:999;}
+
+.notification-indicator{color:#FFF;font-family:Ubuntu;font-size:12px;position:absolute;left:0px;;top:0px;width:20%;background:red;padding-top:24px;padding-bottom:24px;}

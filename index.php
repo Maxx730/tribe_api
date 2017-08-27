@@ -51,7 +51,9 @@
 
 		session_start();
 
-		if((isset($_POST['sign-in-username']) && isset($_POST['sign-in-password'])) || isset($_SESSION['tribe_user'])){
+		if(isset($_GET['logout']) && $_GET['logout'] == true){
+			
+		}else if((isset($_POST['sign-in-username']) && isset($_POST['sign-in-password'])) || isset($_SESSION['tribe_user'])){
 			if($authenticate->authenticate($_POST['sign-in-username'],$_POST['sign-in-password']) || isset($_SESSION['tribe_user'])){
 				$api = new api_handler($authenticate,'{"action":"get","object":"log_session"}',$db);
 
