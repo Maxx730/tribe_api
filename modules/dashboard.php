@@ -32,7 +32,11 @@
 	</div>
 </div>
 <div id = "tribe-global-actions" class = "hide">
-
+	<ul id = "global-actions">
+		<li class = "global-action-option">
+			Create Tribe
+		</li>
+	</ul>
 </div>
 <div id = "profile-info-popup" class = "hide">
 			
