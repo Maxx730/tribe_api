@@ -40,23 +40,28 @@
 		}
 	}else{
 		//Always require the head of our Tribe interface.
+		require_once("lib/helpers.php");
 		require_once('modules/head.php');
 		require_once('modules/tribe_panel.php');
 		include("lib/api_handler.php");
 		include("lib/database_handler.php");
 		include("lib/authentication_handler.php");
 
+		$helper = new debug_helper();
 		$db = new database_handler();
 		$authenticate = new authentication_handler($db);
 
-		session_start();
-
 		if(isset($_GET['logout']) && $_GET['logout'] == true){
-			
-		}else if((isset($_POST['sign-in-username']) && isset($_POST['sign-in-password'])) || isset($_SESSION['tribe_user'])){
-			if($authenticate->authenticate($_POST['sign-in-username'],$_POST['sign-in-password']) || isset($_SESSION['tribe_user'])){
-				$api = new api_handler($authenticate,'{"action":"get","object":"log_session"}',$db);
+			session_unset();
+			session_destroy();
 
+			//Redirect the user to the login page.
+			header("Location:/tribe/");
+		}else if(isset($_SESSION['tribe_user'])){
+			require_once('modules/dashboard.php');
+		}else if((isset($_POST['sign-in-username']) && isset($_POST['sign-in-password']))){
+			if($authenticate->authenticate($_POST['sign-in-username'],$_POST['sign-in-password'])){
+				$api = new api_handler($authenticate,'{"action":"get","object":"log_session"}',$db);
 				require_once('modules/dashboard.php');
 			}
 		}else{
@@ -100,8 +105,6 @@
 		<?php
 		}
 			require_once('modules/foot.php');
-
-			session_destroy();
 	}
 ?>
 

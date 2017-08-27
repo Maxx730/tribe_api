@@ -27,7 +27,7 @@
 					$this->return_auth_token();
 				break;
 				case "log_session":
-
+					$this->return_user_info($_SESSION['tribe_user']);
 				break;
 			}
 		}
@@ -110,7 +110,9 @@
 			$result = mysqli_query($this->db->connection,$query);
 
 			if($result->num_rows > 0){
-				
+				while($row = $result->fetch_assoc()){
+					return $row['username'];
+				}
 			}else{
 				echo "ERROR: User with given ID does not exist.";
 			}

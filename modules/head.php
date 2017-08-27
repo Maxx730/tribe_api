@@ -1,7 +1,15 @@
 <html class = "login-page">
 	<head>		
 		<title>
-			Firepit
+			<?php
+				session_start();
+
+				if(isset($_SESSION['tribe_user'])){
+					echo "Dashboard";
+				}else{
+					echo "Login";
+				}
+			?>
 		</title>
 		<link rel = "stylesheet" type = "text/css" href = "assets/stylesheets/icomoon.css"/>
 		<link rel = "stylesheet" type = "text/css" href = "assets/stylesheets/tribe_ui/fonts.css"/>

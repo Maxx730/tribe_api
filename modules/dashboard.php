@@ -39,7 +39,9 @@
 	</ul>
 </div>
 <div id = "profile-info-popup" class = "hide">
-			
+	<?php
+		echo $api;
+	?>	
 </div>
 <div id = "tribe-global-search">
 	<input type = "text" placeholder = "Search"/>

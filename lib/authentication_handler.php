@@ -14,7 +14,6 @@
 		//base to make sure the user is allowed to access.
 		public function authenticate($user,$password){
 			//Start our session as well as destroy it after every check.
-			session_start();
 
 			$parsed = json_decode($user,true);
 			$query = "SELECT * FROM user WHERE username='".$user."' AND password='".$password."'";
@@ -33,9 +32,6 @@
 			}else{
 				return false;
 			}
-
-			//Destroy the session after success or failue.
-			session_destroy();
 		}
 	}
 ?>
