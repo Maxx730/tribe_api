@@ -25,3 +25,5 @@
     src: url(../fonts/Ubuntu-R.ttf);
 }
 .ubuntu-font{font-family:'Ubuntu';}
+.white-text{color:#FFF;}
+.no-list-style{list-style:none;}

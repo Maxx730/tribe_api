@@ -32,9 +32,15 @@
 	</div>
 </div>
 <div id = "tribe-global-actions" class = "hide">
-	<ul id = "global-actions">
-		<li class = "global-action-option">
+	<ul id = "global-actions" class = "ubuntu-font">
+		<li class = "global-action-option no-list-style white-text">
 			Create Tribe
+		</li>
+		<li class = "global-action-option no-list-style white-text">
+			Private Messages
+		</li>
+		<li class = "global-action-option no-list-style white-text">
+			
 		</li>
 	</ul>
 </div>
@@ -44,6 +50,9 @@
 			echo $api->username;
 		?>
 	</h3>
+	<div id = "account_stats">
+		<h6>Number of Tribes: </h6>
+	</div>
 </div>
 <div id = "tribe-global-search">
 	<input type = "text" placeholder = "Search"/>
