@@ -69,5 +69,7 @@
 	</div>
 </div>
 <div id = 'tribe-dashboard'>
-
+	<?php
+		require_once("modules/dashboard_contents.php");
+	?>
 </div>
