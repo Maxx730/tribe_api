@@ -6,17 +6,26 @@
 		var $auth = null;
 		var $data = null;
 		var $db = null;
+		var $helper = null;
+
+		var $username = null;
+		var $uid = null;
 
 		//Construct will take in the data that is sent in as a 
 		//JSON object.
-		public function __construct($auth,$data,$db){
+		public function __construct($auth,$data,$db,$helper){
 			$this->auth = $auth;
 			$this->data = $data;
 			$this->db = $db;
 
+			//Optional parameter for debugging purposes.
+			$this->helper = $helper;
+
 			mysqli_select_db('tribe_db');
 
-			switch($data["object"]){
+			$check = json_decode($data,true);
+
+			switch($check["object"]){
 				case "tribes":
 					$this->return_user_tribes($auth->user_id);
 				break;
@@ -106,15 +115,15 @@
 		//Returns the user info as well as all the tribes the user is a part of etc.
 		private function return_user_info($uid){
 			$query = "SELECT * FROM user WHERE uid=".$uid;
-
+			$this->uid = $uid;
 			$result = mysqli_query($this->db->connection,$query);
 
 			if($result->num_rows > 0){
 				while($row = $result->fetch_assoc()){
-					return $row['username'];
+					$this->username = $row['username'];
 				}
 			}else{
-				echo "ERROR: User with given ID does not exist.";
+				$this->helper->js_alert("ERROR: User with given ID does not exist.","alert");
 			}
 		}
 	}

@@ -58,10 +58,11 @@
 			//Redirect the user to the login page.
 			header("Location:/tribe/");
 		}else if(isset($_SESSION['tribe_user'])){
+			$api = new api_handler($authenticate,'{"action":"get","object":"log_session"}',$db,$helper);
 			require_once('modules/dashboard.php');
 		}else if((isset($_POST['sign-in-username']) && isset($_POST['sign-in-password']))){
 			if($authenticate->authenticate($_POST['sign-in-username'],$_POST['sign-in-password'])){
-				$api = new api_handler($authenticate,'{"action":"get","object":"log_session"}',$db);
+				$api = new api_handler($authenticate,'{"action":"get","object":"log_session"}',$db,$helper);
 				require_once('modules/dashboard.php');
 			}
 		}else{

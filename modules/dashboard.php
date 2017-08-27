@@ -39,9 +39,11 @@
 	</ul>
 </div>
 <div id = "profile-info-popup" class = "hide">
-	<?php
-		echo $api;
-	?>	
+	<h3 class = "ubuntu-font">
+		<?php
+			echo $api->username;
+		?>
+	</h3>
 </div>
 <div id = "tribe-global-search">
 	<input type = "text" placeholder = "Search"/>
