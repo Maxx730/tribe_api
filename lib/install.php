@@ -5,10 +5,11 @@
 		var $url = "localhost";
 		var $database = "tribe_db";
 		var $usrname = "root";
-		var $password = "dRmario43";
+		var $password = "drmario";
 		var $connection = null;
 
 		public function __construct(){
+
 			//Initialize our connection to the database.
 			$this->connection = mysqli_connect($this->url,$this->usrname,$this->password);
 
@@ -29,6 +30,8 @@
 	 		}else{
 	 			echo "ERROR: Problem creating database.\n";
 	 		}
+
+	 		//STUPID MAX THIS SHOULD ALL BE INSIDE THE DATABASE CREATION QUERY ABOVE!!!!
 
 	 		//Select the database that was just created.
 	 		if(mysqli_select_db($this->connection,$this->database)){
@@ -71,6 +74,7 @@
 
 	 	//Purges data from all the tables in the database.
 	 	public function purge_data(){
+	 		echo "keck";
 	 		$this->purge_table("user");
 	 		$this->purge_table("tribe");
 	 		$this->purge_table("tribe_user");
